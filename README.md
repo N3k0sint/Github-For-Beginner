@@ -87,9 +87,28 @@ If you want to go deeper, check these out:
 
 ---
 
-## 📊 Repository Stats
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=Github-for-Beginner&theme=radical)
+## 📊 Repository & Profile Stats
+> **Noted :** To make these stats show your own data, replace `YOUR_GITHUB_USERNAME` in the links below with your actual GitHub username.
 
+<p align="center">
+  <img src="https://github-stats-alpha.vercel.app/api?username=YOUR_GITHUB_USERNAME&cc=222&tc=ff0055&ic=ffffff&border=ffffff" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=radical" />
+</p>
+
+<p align="center">
+  <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FYOUR_GITHUB_USERNAME&labelColor=%232c3e50&countColor=%23f39c12" />
+</p>
+
+---
+
+## 🚀 How to customize these stats for yourself:
+1. **Copy** the code blocks above.
+2. **Find** the text that says `YOUR_GITHUB_USERNAME`.
+3. **Replace** it with your real GitHub username (e.g., if your name is `Coder123`, the link should end in `?username=Coder123`).
+4. **Commit** your changes to see your personal stats live!
 
 ## 🤝 Contributing
 Found a mistake or want to add a cool command?

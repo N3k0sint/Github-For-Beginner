@@ -91,6 +91,56 @@ Here are the "Big Five" commands you'll use 90% of the time.
 
 ---
 
+## 👥 Collaboration: Working in a Team
+
+If you are working on a project with friends or a team, you need to know how to give them access and how they can start working.
+
+### 🛠️ How to Add Collaborators
+1. Go to your repository on GitHub.
+2. Click on **Settings** (top tab).
+3. On the left sidebar, click **Collaborators** under the "Access" section.
+4. Click the **Add people** button.
+5. Type their GitHub username or email and click **Add to this repository**.
+6. **Note:** Your friend must check their email or GitHub notifications to **Accept** the invitation before they can push code.
+
+### 🏗️ What Collaborators Can Do
+Once someone is added as a collaborator, they have "Push Access." This means they can:
+* **Push directly:** They can run `git push` to send changes to your repo without needing a Pull Request.
+* **Manage Branches:** They can create, delete, and merge branches.
+* **Handle Issues:** They can open, close, and assign labels to tasks.
+
+### 🚀 How to Contribute (For Collaborators)
+If you have just been added to a project, here is how you get started:
+
+1. **Clone the repo:** (Download the project to your laptop).
+   ```bash
+   git clone <URL_OF_THE_PROJECT>
+
+2. **Create your own branch:** (The collaborator does this!) Never work directly on `main`. </br>
+   Creating a branch keeps the "official" code safe while you work.
+   ```bash
+   # Replace 'feature-name' with what you are working on
+    git checkout -b feature-name
+
+3. **Do your work & Save:** After editing your files, save a snapshot locally.
+   ```bash
+   git add .
+   git commit -m "Briefly describe what you added or fixed"
+
+4. **Push your branch to GitHub:** Send your new branch up to the cloud.
+   ```bash
+   git push origin feature-name
+
+5. **Open a Pull Request (Collaborator does this):** 
+   - Go to the **Owner's** repository page on GitHub.
+   - Look for the yellow bar that says **"Compare & pull request"** and click it.
+   - Write a short note about your changes and click **Create pull request**.
+
+6. **Merge (Action by Owner):** 
+   - The Owner will see your request, review the code, and click **Merge pull request** to officially add your work to the `main` branch!
+
+---
+
 ## ✨ Pro Tips: Make Your Repo & Profile Look Nice
 
 ### 1. Level up your README

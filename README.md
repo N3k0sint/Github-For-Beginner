@@ -91,6 +91,65 @@ Here are the "Big Five" commands you'll use 90% of the time.
 
 ---
 
+## 🔄 The Clean Sync Alternative: `fetch` + `rebase`
+
+Instead of creating messy "merge bubbles" or risking data loss with `--force`, you can synchronize your work cleanly using `git fetch` and `git rebase`.
+
+### 1. `git fetch origin` (The Fact-Check)
+Downloads remote updates safely into your background cache without modifying your working files.
+```bash
+git fetch origin
+```
+* Connects to GitHub and checks for new incoming commits.
+
+* Leaves your working directory files and uncommitted code completely untouched.
+
+* Lets you inspect remote changes before altering your local history.
+
+
+### 2. `git rebase origin/main` (The Re-ordering)
+Places your local commits cleanly on top of the newly fetched remote history.
+```bash
+git rebase origin/main
+```
+* Temporarily lifts your unpushed local commits off the branch.
+
+* Applies all incoming remote commits to your base history.
+
+* Replays your local commits right back on top of the newest changes.
+
+📊 The Result: A Clean, Linear Timeline
+```bash
+── [Base Project] ── [Remote Commits (On Github Commits] ── [Your Local Commits (On your Laptop Commits)] (HEAD)
+```
+
+--- 
+
+## ⚡ Git "Force" Commands: Handle With Care!
+Sometimes Git will stop you from pushing because the cloud repository has updates your local machine does not have. "Force" commands are powerful shortcuts used to override these roadblocks.
+
+## ⚠️ The Golden Rule:
+Never force push on a shared or production branch (main) if other team members are working on it! You will overwrite and delete their work.
+
+1. Force Push (--force)
+If you purposely rewrote your commit history locally (like using the email privacy trick above) and GitHub rejects your push, you use this to force the website to accept your local version:
+```bash
+git push origin main --force
+```
+Alternative safer command: git push origin main --force-with-lease (This checks if someone else pushed changes first before destroying anything).
+
+2. Force Pull / Hard Reset
+If you made a complete mess of your code locally and want to erase all your mistakes to match the exact state currently saved on GitHub, use a hard reset:
+```bash
+# Fetches the latest code from GitHub without merging it yet
+git fetch origin
+
+# Destroys all local changes and syncs your laptop exactly with the cloud
+git reset --hard origin/main
+```
+
+---
+
 ## 👥 Collaboration: Working in a Team
 
 If you are working on a project with friends or a team, you need to know how to give them access and how they can start working.
@@ -163,6 +222,18 @@ Since we are dealing with code, safety comes first:
 * **Never commit secrets:** Never push API keys, passwords, or `.env` files. 
 * **Use `.gitignore`:** Create a file named `.gitignore` to tell Git which files to ignore (like `node_modules` or local logs).
 * **SSH vs HTTPS:** Use SSH keys for authentication instead of passwords for better security.
+* **Hide Your Real Email:** By default, Git uses your real email when making commits. To protect your privacy and hide your email from the public history, you can use GitHub's anonymous placeholder instead:
+  
+ ```bash
+ ** 1. Configure Git to use your GitHub anonymous email
+git config user.email "YOUR_GITHUB_USERNAME@users.noreply.github.com"
+
+ ** 2. Overwrite your previous local commit to swap out the email address
+git commit --amend --reset-author --no-edit
+
+ ** 3. Push your cleaned local commit history up to GitHub safely
+git push -u origin main
+```
 
 ## 🎓 Learning Resources
 If you want to go deeper, check these out:

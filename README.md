@@ -123,6 +123,21 @@ git rebase origin/main
 ── [Base Project] ── [Remote Commits (On Github Commits] ── [Your Local Commits (On your Laptop Commits)] (HEAD)
 ```
 
+Whenever GitHub rejects your push because it has newer commits, you have two great options:
+* Option A (Manual & Safe):
+```bash
+git fetch origin
+git rebase origin/main
+git push origin main
+```
+*Option B (The 1-line shortcut):
+```bash
+git pull --rebase origin main
+git push origin main
+```
+(Adding --rebase tells git pull to fetch and rebase instead of creating a messy merge commit!)
+
+
 --- 
 
 ## ⚡ Git "Force" Commands: Handle With Care!
